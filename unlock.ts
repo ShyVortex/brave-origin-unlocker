@@ -1,7 +1,7 @@
 const localAppData = Deno.env.get("LOCALAPPDATA");
 
 const localStatePath =
-  `${localAppData}\\BraveSoftware\\Brave-Origin-Nightly\\User Data\\Local State`;
+  `${localAppData}\\BraveSoftware\\Brave-Origin-Beta\\User Data\\Local State`;
 
 const localState = JSON.parse(await Deno.readTextFile(localStatePath));
 
@@ -19,4 +19,4 @@ localState.skus = {
 
 await Deno.writeTextFile(localStatePath, JSON.stringify(localState));
 
-console.log("Brave Origin Nightly unlocked successfully!");
+console.log("Brave Origin Beta unlocked successfully!");
