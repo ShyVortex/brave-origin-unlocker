@@ -25,7 +25,12 @@ for (const version of versions) {
 
     console.log(version.replace(/-/g, " ") + " unlocked successfully!");
     foundAny = true;
-  } catch {
+  } catch (error) {
+    if (error instanceof Deno.errors.NotFound) {
+      continue;
+    }
+
+    throw error;
   }
 }
 
