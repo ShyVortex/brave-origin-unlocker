@@ -1,10 +1,11 @@
 const localAppData = Deno.env.get("LOCALAPPDATA");
 
-const versions = ["Brave-Origin-Beta", "Brave-Origin-Nightly"];
+const versions = ["Brave-Origin", "Brave-Origin-Beta", "Brave-Origin-Nightly"];
 let foundAny = false;
 
 for (const version of versions) {
-  const localStatePath = localAppData + "\\BraveSoftware\\" + version + "\\User Data\\Local State";
+  const localStatePath =
+    `${localAppData}\\BraveSoftware\\${version}\\User Data\\Local State`;
 
   try {
     const localState = JSON.parse(await Deno.readTextFile(localStatePath));
