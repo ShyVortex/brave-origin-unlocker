@@ -11,8 +11,8 @@ This tool modifies the Brave Origin browser's local state configuration to unloc
 - ✅ Unlocks Brave Origin features
 - ✅ Modifies purchase validation state
 - ✅ Updates SKU credentials
-- ✅ Windows and macOS path compatibility
-- ✅ Easy execution via Deno tasks
+- ✅ Windows and macOS auto-detection & compatibility
+- ✅ Easy execution and cross-compilation via Deno tasks
 
 ## Requirements
 
@@ -32,17 +32,34 @@ This tool modifies the Brave Origin browser's local state configuration to unloc
 
 ## How to Run 🚀
 
-You can run the unlocker directly using the pre-configured Deno tasks:
+The script automatically detects whether you are running on Windows or macOS. You can run the unlocker directly with:
 
-### For Windows 🪟
 ```bash
-deno task unlock-win
+deno task unlock
 ```
 
-### For macOS 🍎
+---
+
+## How to Compile / Cross-Compile 📦
+
+You can build standalone binaries for different operating systems and architectures using the pre-configured compilation tasks:
+
+### Compile for Windows (x64)
 ```bash
-deno task unlock-mac
+deno task compile-win
 ```
+
+### Compile for macOS Apple Silicon (ARM64)
+```bash
+deno task compile-mac-arm
+```
+
+### Compile for macOS Intel (x64)
+```bash
+deno task compile-mac-x64
+```
+
+These tasks will output the built binaries into the `dist/` directory.
 
 ---
 
